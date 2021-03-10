@@ -30,16 +30,16 @@ namespace PandemicSimulator
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea19 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend19 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series55 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series56 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series57 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea20 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend20 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series58 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series59 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series60 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.mainChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.nbHumanTxt = new System.Windows.Forms.Label();
@@ -66,21 +66,31 @@ namespace PandemicSimulator
             this.SpecificSusceptibleCases = new System.Windows.Forms.Label();
             this.SpecificCasesNbre = new System.Windows.Forms.Label();
             this.placeInfoTxt = new System.Windows.Forms.Label();
+            this.CustomVirus = new System.Windows.Forms.CheckBox();
+            this.MaxLifeTimeCursor = new System.Windows.Forms.TrackBar();
+            this.MaxLifetimeTxt = new System.Windows.Forms.Label();
+            this.InfectionRangeCursor = new System.Windows.Forms.TrackBar();
+            this.InfectionRateTxt = new System.Windows.Forms.Label();
+            this.TransmissionRateTxt = new System.Windows.Forms.Label();
+            this.TransmissionRateCursor = new System.Windows.Forms.TrackBar();
             ((System.ComponentModel.ISupportInitialize)(this.mainChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HygieneLevelCursor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SocialDistanceCursor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TravellingRateCursor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpecificGraph)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.speedVitesseCursor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MaxLifeTimeCursor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InfectionRangeCursor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TransmissionRateCursor)).BeginInit();
             this.SuspendLayout();
             // 
             // mainChart
             // 
-            chartArea1.AxisX.Minimum = 0D;
-            chartArea1.Name = "ChartArea1";
-            this.mainChart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.mainChart.Legends.Add(legend1);
+            chartArea19.AxisX.Minimum = 0D;
+            chartArea19.Name = "ChartArea1";
+            this.mainChart.ChartAreas.Add(chartArea19);
+            legend19.Name = "Legend1";
+            this.mainChart.Legends.Add(legend19);
             this.mainChart.Location = new System.Drawing.Point(9, 99);
             this.mainChart.Margin = new System.Windows.Forms.Padding(0);
             this.mainChart.Name = "mainChart";
@@ -89,27 +99,27 @@ namespace PandemicSimulator
         System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(103)))), ((int)(((byte)(83))))),
         System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(97)))), ((int)(((byte)(107))))),
         System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))))};
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedArea100;
-            series1.Legend = "Legend1";
-            series1.Name = "INFECTIOUS";
-            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
-            series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedArea100;
-            series2.Legend = "Legend1";
-            series2.Name = "SUSCEPTIBLE";
-            series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
-            series2.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedArea100;
-            series3.Legend = "Legend1";
-            series3.Name = "REMOVED";
-            series3.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
-            series3.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
-            this.mainChart.Series.Add(series1);
-            this.mainChart.Series.Add(series2);
-            this.mainChart.Series.Add(series3);
+            series55.ChartArea = "ChartArea1";
+            series55.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedArea100;
+            series55.Legend = "Legend1";
+            series55.Name = "INFECTIOUS";
+            series55.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
+            series55.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
+            series56.ChartArea = "ChartArea1";
+            series56.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedArea100;
+            series56.Legend = "Legend1";
+            series56.Name = "SUSCEPTIBLE";
+            series56.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
+            series56.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
+            series57.ChartArea = "ChartArea1";
+            series57.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedArea100;
+            series57.Legend = "Legend1";
+            series57.Name = "REMOVED";
+            series57.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
+            series57.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
+            this.mainChart.Series.Add(series55);
+            this.mainChart.Series.Add(series56);
+            this.mainChart.Series.Add(series57);
             this.mainChart.Size = new System.Drawing.Size(1150, 348);
             this.mainChart.TabIndex = 0;
             // 
@@ -250,11 +260,11 @@ namespace PandemicSimulator
             // 
             // SpecificGraph
             // 
-            chartArea2.AxisX.Minimum = 0D;
-            chartArea2.Name = "ChartArea1";
-            this.SpecificGraph.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.SpecificGraph.Legends.Add(legend2);
+            chartArea20.AxisX.Minimum = 0D;
+            chartArea20.Name = "ChartArea1";
+            this.SpecificGraph.ChartAreas.Add(chartArea20);
+            legend20.Name = "Legend1";
+            this.SpecificGraph.Legends.Add(legend20);
             this.SpecificGraph.Location = new System.Drawing.Point(9, 491);
             this.SpecificGraph.Margin = new System.Windows.Forms.Padding(0);
             this.SpecificGraph.Name = "SpecificGraph";
@@ -263,30 +273,30 @@ namespace PandemicSimulator
         System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(103)))), ((int)(((byte)(83))))),
         System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(97)))), ((int)(((byte)(107))))),
         System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))))};
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedArea100;
-            series4.Legend = "Legend1";
-            series4.Name = "INFECTIOUS";
-            series4.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
-            series4.YValuesPerPoint = 6;
-            series4.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedArea100;
-            series5.Legend = "Legend1";
-            series5.Name = "SUSCEPTIBLE";
-            series5.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
-            series5.YValuesPerPoint = 6;
-            series5.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedArea100;
-            series6.Legend = "Legend1";
-            series6.Name = "REMOVED";
-            series6.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
-            series6.YValuesPerPoint = 6;
-            series6.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
-            this.SpecificGraph.Series.Add(series4);
-            this.SpecificGraph.Series.Add(series5);
-            this.SpecificGraph.Series.Add(series6);
+            series58.ChartArea = "ChartArea1";
+            series58.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedArea100;
+            series58.Legend = "Legend1";
+            series58.Name = "INFECTIOUS";
+            series58.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
+            series58.YValuesPerPoint = 6;
+            series58.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
+            series59.ChartArea = "ChartArea1";
+            series59.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedArea100;
+            series59.Legend = "Legend1";
+            series59.Name = "SUSCEPTIBLE";
+            series59.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
+            series59.YValuesPerPoint = 6;
+            series59.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
+            series60.ChartArea = "ChartArea1";
+            series60.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedArea100;
+            series60.Legend = "Legend1";
+            series60.Name = "REMOVED";
+            series60.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
+            series60.YValuesPerPoint = 6;
+            series60.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
+            this.SpecificGraph.Series.Add(series58);
+            this.SpecificGraph.Series.Add(series59);
+            this.SpecificGraph.Series.Add(series60);
             this.SpecificGraph.Size = new System.Drawing.Size(1150, 348);
             this.SpecificGraph.TabIndex = 20;
             this.SpecificGraph.Text = "chart1";
@@ -332,7 +342,7 @@ namespace PandemicSimulator
             // speedVitesseCursor
             // 
             this.speedVitesseCursor.LargeChange = 50;
-            this.speedVitesseCursor.Location = new System.Drawing.Point(1171, 502);
+            this.speedVitesseCursor.Location = new System.Drawing.Point(1169, 705);
             this.speedVitesseCursor.Maximum = 500;
             this.speedVitesseCursor.Minimum = 10;
             this.speedVitesseCursor.Name = "speedVitesseCursor";
@@ -345,7 +355,7 @@ namespace PandemicSimulator
             // speedVitesseTxt
             // 
             this.speedVitesseTxt.AutoSize = true;
-            this.speedVitesseTxt.Location = new System.Drawing.Point(1176, 486);
+            this.speedVitesseTxt.Location = new System.Drawing.Point(1174, 689);
             this.speedVitesseTxt.Name = "speedVitesseTxt";
             this.speedVitesseTxt.Size = new System.Drawing.Size(180, 13);
             this.speedVitesseTxt.TabIndex = 26;
@@ -387,11 +397,95 @@ namespace PandemicSimulator
             this.placeInfoTxt.TabIndex = 31;
             this.placeInfoTxt.Text = "Info :";
             // 
+            // CustomVirus
+            // 
+            this.CustomVirus.AutoSize = true;
+            this.CustomVirus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.CustomVirus.Location = new System.Drawing.Point(1177, 370);
+            this.CustomVirus.Name = "CustomVirus";
+            this.CustomVirus.Size = new System.Drawing.Size(194, 21);
+            this.CustomVirus.TabIndex = 38;
+            this.CustomVirus.Text = "Use custom value for virus";
+            this.CustomVirus.UseVisualStyleBackColor = true;
+            this.CustomVirus.CheckedChanged += new System.EventHandler(this.CustomVirus_CheckedChanged);
+            // 
+            // MaxLifeTimeCursor
+            // 
+            this.MaxLifeTimeCursor.Enabled = false;
+            this.MaxLifeTimeCursor.LargeChange = 25;
+            this.MaxLifeTimeCursor.Location = new System.Drawing.Point(1177, 538);
+            this.MaxLifeTimeCursor.Maximum = 50;
+            this.MaxLifeTimeCursor.Name = "MaxLifeTimeCursor";
+            this.MaxLifeTimeCursor.Size = new System.Drawing.Size(330, 45);
+            this.MaxLifeTimeCursor.SmallChange = 20;
+            this.MaxLifeTimeCursor.TabIndex = 37;
+            this.MaxLifeTimeCursor.Scroll += new System.EventHandler(this.MaxLifeTimeCursor_Scroll);
+            // 
+            // MaxLifetimeTxt
+            // 
+            this.MaxLifetimeTxt.AutoSize = true;
+            this.MaxLifetimeTxt.Location = new System.Drawing.Point(1174, 522);
+            this.MaxLifetimeTxt.Name = "MaxLifetimeTxt";
+            this.MaxLifetimeTxt.Size = new System.Drawing.Size(87, 13);
+            this.MaxLifetimeTxt.TabIndex = 36;
+            this.MaxLifetimeTxt.Text = "Max Lifetime : 14";
+            // 
+            // InfectionRangeCursor
+            // 
+            this.InfectionRangeCursor.Enabled = false;
+            this.InfectionRangeCursor.LargeChange = 50;
+            this.InfectionRangeCursor.Location = new System.Drawing.Point(1177, 474);
+            this.InfectionRangeCursor.Maximum = 20;
+            this.InfectionRangeCursor.Minimum = 1;
+            this.InfectionRangeCursor.Name = "InfectionRangeCursor";
+            this.InfectionRangeCursor.Size = new System.Drawing.Size(330, 45);
+            this.InfectionRangeCursor.SmallChange = 20;
+            this.InfectionRangeCursor.TabIndex = 35;
+            this.InfectionRangeCursor.Value = 1;
+            this.InfectionRangeCursor.Scroll += new System.EventHandler(this.InfectionRangeCursor_Scroll);
+            // 
+            // InfectionRateTxt
+            // 
+            this.InfectionRateTxt.AutoSize = true;
+            this.InfectionRateTxt.Location = new System.Drawing.Point(1174, 458);
+            this.InfectionRateTxt.Name = "InfectionRateTxt";
+            this.InfectionRateTxt.Size = new System.Drawing.Size(89, 13);
+            this.InfectionRateTxt.TabIndex = 34;
+            this.InfectionRateTxt.Text = "Infection Rate : 3";
+            // 
+            // TransmissionRateTxt
+            // 
+            this.TransmissionRateTxt.AutoSize = true;
+            this.TransmissionRateTxt.Location = new System.Drawing.Point(1174, 394);
+            this.TransmissionRateTxt.Name = "TransmissionRateTxt";
+            this.TransmissionRateTxt.Size = new System.Drawing.Size(118, 13);
+            this.TransmissionRateTxt.TabIndex = 33;
+            this.TransmissionRateTxt.Text = "Transmission Rate : 0.6";
+            // 
+            // TransmissionRateCursor
+            // 
+            this.TransmissionRateCursor.Enabled = false;
+            this.TransmissionRateCursor.LargeChange = 50;
+            this.TransmissionRateCursor.Location = new System.Drawing.Point(1177, 410);
+            this.TransmissionRateCursor.Maximum = 99;
+            this.TransmissionRateCursor.Name = "TransmissionRateCursor";
+            this.TransmissionRateCursor.Size = new System.Drawing.Size(330, 45);
+            this.TransmissionRateCursor.SmallChange = 20;
+            this.TransmissionRateCursor.TabIndex = 32;
+            this.TransmissionRateCursor.Scroll += new System.EventHandler(this.TransmissionRateCursor_Scroll);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1513, 848);
+            this.Controls.Add(this.CustomVirus);
+            this.Controls.Add(this.MaxLifeTimeCursor);
+            this.Controls.Add(this.MaxLifetimeTxt);
+            this.Controls.Add(this.InfectionRangeCursor);
+            this.Controls.Add(this.InfectionRateTxt);
+            this.Controls.Add(this.TransmissionRateTxt);
+            this.Controls.Add(this.TransmissionRateCursor);
             this.Controls.Add(this.placeInfoTxt);
             this.Controls.Add(this.SpecificRemovedNbre);
             this.Controls.Add(this.SpecificSusceptibleCases);
@@ -425,6 +519,9 @@ namespace PandemicSimulator
             ((System.ComponentModel.ISupportInitialize)(this.TravellingRateCursor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpecificGraph)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.speedVitesseCursor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MaxLifeTimeCursor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InfectionRangeCursor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TransmissionRateCursor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -458,6 +555,13 @@ namespace PandemicSimulator
         private System.Windows.Forms.Label SpecificCasesNbre;
         private System.Windows.Forms.Label SpecificSusceptibleCases;
         private System.Windows.Forms.Label placeInfoTxt;
+        private System.Windows.Forms.CheckBox CustomVirus;
+        private System.Windows.Forms.TrackBar MaxLifeTimeCursor;
+        private System.Windows.Forms.Label MaxLifetimeTxt;
+        private System.Windows.Forms.TrackBar InfectionRangeCursor;
+        private System.Windows.Forms.Label InfectionRateTxt;
+        private System.Windows.Forms.Label TransmissionRateTxt;
+        public System.Windows.Forms.TrackBar TransmissionRateCursor;
     }
 }
 

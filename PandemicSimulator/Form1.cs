@@ -112,7 +112,6 @@ namespace PandemicSimulator
                 int infectious = node.GetSIRCount(Human.SIR.INFECTIOUS);
                 int removed = node.GetSIRCount(Human.SIR.REMOVED);
 
-
                 if (LocationComboList.SelectedIndex != -1 && node == (Node)LocationComboList.SelectedItem)
                 {
                     SpecificGraph.Series["SUSCEPTIBLE"].Points.AddXY(currentDay, susceptible);
@@ -131,17 +130,11 @@ namespace PandemicSimulator
                 graphValue[i][1].Add(infectious);
                 graphValue[i][2].Add(removed);
                 
-                
 
-                
                 totalSusceptible += susceptible;
                 totalInfectious += infectious;
                 totalRemoved += removed;
             }
-
-
-
-
             mainChart.Series["SUSCEPTIBLE"].Points.AddXY(currentDay, totalSusceptible);
             mainChart.Series["INFECTIOUS"].Points.AddXY(currentDay, totalInfectious);
             mainChart.Series["REMOVED"].Points.AddXY(currentDay, totalRemoved);
@@ -160,13 +153,26 @@ namespace PandemicSimulator
             
 
 
-            graph = Graph.FromFile("../../../tests/" + graphFilename);
+            graph = Graph.FromFile("../../../Ressources/" + graphFilename);
             if (graph == null)
             {
                 throw new Exception("Failed to create graph: wrong format");
             }
 
             hogwarts = new Location(graph, numberOfHumans, !CheckBoxChangeValue.Checked);
+
+            if(CustomVirus.Checked == true)
+            {
+                PandemicSimulator.GLOBAL_TRANSMISSIONRATE = TransmissionRateCursor.Value / 100f;
+                PandemicSimulator.GLOBAL_INFECTIONRANGE = InfectionRangeCursor.Value;
+                PandemicSimulator.GLOBAL_MAXLIFETIME = MaxLifeTimeCursor.Value;
+            }
+            else
+            { // utilise les valeurs du covid
+                PandemicSimulator.GLOBAL_TRANSMISSIONRATE = 0.6;
+                PandemicSimulator.GLOBAL_INFECTIONRANGE = 3;
+                PandemicSimulator.GLOBAL_MAXLIFETIME = 14;
+            }
 
             PandemicSimulator.InitializePandemic(hogwarts);
 
@@ -344,6 +350,50 @@ namespace PandemicSimulator
             }
             
 
+        }
+
+        private void TransmissionRateCursor_Scroll(object sender, EventArgs e)
+        {
+            TransmissionRateTxt.Text = "Transmission Rate : " + TransmissionRateCursor.Value / 100f;
+        }
+
+        private void InfectionRangeCursor_Scroll(object sender, EventArgs e)
+        {
+            InfectionRateTxt.Text = "Infection Rate : " + InfectionRangeCursor.Value;
+        }
+
+        private void MaxLifeTimeCursor_Scroll(object sender, EventArgs e)
+        {//between 0 and 50
+            MaxLifetimeTxt.Text = "Max Lifetime : " + MaxLifeTimeCursor.Value; 
+        }
+
+        private void CustomVirus_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CustomVirus.Checked == true)
+            {
+                
+
+
+
+                TransmissionRateCursor.Enabled = true;
+                TransmissionRateTxt.Text = "Transmission Rate : " + TransmissionRateCursor.Value / 100f;
+
+                InfectionRangeCursor.Enabled = true;
+                InfectionRateTxt.Text = "Infection Rate : " + InfectionRangeCursor.Value;
+
+
+
+                MaxLifeTimeCursor.Enabled = true;
+                MaxLifetimeTxt.Text = "Max Lifetime : " + MaxLifeTimeCursor.Value;
+            }
+
+            else
+            {
+
+                TransmissionRateCursor.Enabled = false;
+                InfectionRangeCursor.Enabled = false;
+                MaxLifeTimeCursor.Enabled = false;
+            }
         }
     }
 }

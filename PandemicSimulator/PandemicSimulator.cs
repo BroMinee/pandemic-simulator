@@ -6,6 +6,10 @@ namespace PandemicSimulator
 {
     public class PandemicSimulator
     {
+        public static double GLOBAL_TRANSMISSIONRATE;
+        public static int GLOBAL_INFECTIONRANGE;
+        public static int GLOBAL_MAXLIFETIME;
+
         public static List<Human> infectious;
 
         /// <summary>
@@ -16,9 +20,16 @@ namespace PandemicSimulator
         {
             infectious = new List<Human>();
             Human patientZero = location.GetHumans()[Form1.rng.Next(location.GetHumans().Count)];
-            patientZero.SetVirus(new Virus("Covid-19", 0.6, 3, 14));
+            
+            patientZero.SetVirus(new Virus("Covid-19", GLOBAL_TRANSMISSIONRATE, GLOBAL_INFECTIONRANGE, GLOBAL_MAXLIFETIME));
+            
+            
             patientZero.SetSir(Human.SIR.INFECTIOUS);
             infectious.Add(patientZero);
+
+            // string name, double transmissionRate, int infectionRange, int maxLifetime
+            //Covid-16, 0.6, 3, 14
+            // H1N1,  ,    ,7
         } 
 
         /// <summary>
@@ -83,7 +94,7 @@ namespace PandemicSimulator
 
                         if (moyenneHygiene * 100 < Form1.rng.Next(100) && moyenneDistanceSociale * 100 < Form1.rng.Next(100))// Possiblement infecte
                         {
-                            humanOnSpot[pos].SetVirus(new Virus("Covid-19", 0.6,3, 14)); // On reprend pas les valeurs du transmetteur
+                            humanOnSpot[pos].SetVirus(new Virus("Covid-19", GLOBAL_TRANSMISSIONRATE, GLOBAL_INFECTIONRANGE, GLOBAL_MAXLIFETIME));
                             humanOnSpot[pos].SetSir(Human.SIR.INFECTIOUS);
                             justGotInfected.Add(humanOnSpot[pos]);
                         }
