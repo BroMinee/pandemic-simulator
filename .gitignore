@@ -9,7 +9,3 @@ obj
 
 # Outputs
 *.gif
-*.dot
-
-# File test
-tests
