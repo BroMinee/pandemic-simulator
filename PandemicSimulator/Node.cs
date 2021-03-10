@@ -42,7 +42,7 @@ namespace PandemicSimulator
             if ((object)node1 == null && (object)node2 == null) // 2 null = identiques // on le cast en object pour avoir le egal classique
                 return true;
 
-            if ((object)node1 == null) // l'autre est forcement non null
+            if ((object)node1 == null || (object)node2 == null) // l'autre est forcement non null
                 return false;
 
             return (node1.label == node2.label);

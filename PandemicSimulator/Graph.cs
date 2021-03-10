@@ -110,9 +110,11 @@ namespace PandemicSimulator
         /// <exception cref="Exception">an exception should be raised if the edge already exists</exception>
         public static void UpdateGraphFromLine(string edgeLine, Graph graph)
         {
-            string[] words = edgeLine.Split(' ', '\t', ';');
-            Node source = graph.AddNode(words[1]);
-            Node dest = graph.AddNode(words[3]);
+            string[] stringSeparators = new string[] { " ", ";", "-", "\t" };
+            string[] words = edgeLine.Split(stringSeparators, StringSplitOptions.RemoveEmptyEntries);
+
+            Node source = graph.AddNode(words[0]);
+            Node dest = graph.AddNode(words[1]);
 
             if (graph.AddEdge(source, dest) == false)
             {

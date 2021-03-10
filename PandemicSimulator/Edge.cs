@@ -32,7 +32,7 @@ namespace PandemicSimulator
             if ((object)edge1 == null && (object)edge2 == null) // arete nulles = identique // on le cast en object pour avoir le egal classique
                 return true;
 
-            if ((object)edge1 == null) // null != non null
+            if ((object)edge1 == null || (object)edge2 == null) // null != non null
                 return false;
 
             //Si les nodes sont vides c'est deja gerer

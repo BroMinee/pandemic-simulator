@@ -118,6 +118,12 @@ namespace PandemicSimulator
                     SpecificGraph.Series["SUSCEPTIBLE"].Points.AddXY(currentDay, susceptible);
                     SpecificGraph.Series["INFECTIOUS"].Points.AddXY(currentDay, infectious);
                     SpecificGraph.Series["REMOVED"].Points.AddXY(currentDay, removed);
+
+
+                    SpecificSusceptibleCases.Text = "Number of susceptible : " + susceptible;
+                    SpecificCasesNbre.Text = "Number of cases : " + infectious;
+                    SpecificRemovedNbre.Text = "Number of removed : " + removed;
+                      
                 }
                 
                 // Save Data
@@ -157,8 +163,7 @@ namespace PandemicSimulator
             graph = Graph.FromFile("../../../tests/" + graphFilename);
             if (graph == null)
             {
-                Console.Error.WriteLine("Failed to create graph: wrong format");
-                return;
+                throw new Exception("Failed to create graph: wrong format");
             }
 
             hogwarts = new Location(graph, numberOfHumans, !CheckBoxChangeValue.Checked);
@@ -259,7 +264,6 @@ namespace PandemicSimulator
 
                 TravellingRateCursor.Enabled = true;
                 TravellingRateTxt.Text = "Travelling Rate : " + TravellingRateCursor.Value / 100f;
-                
             }
 
             else
@@ -287,10 +291,17 @@ namespace PandemicSimulator
             TravellingRateTxt.Text = "Travelling Rate : " + TravellingRateCursor.Value / 100f;
         }
 
+        private void speedVitesseCursor_Scroll(object sender, EventArgs e)
+        {
+            speedVitesseTxt.Text = "Time between each update : " + speedVitesseCursor.Value + " ms";
+            timer.Interval = speedVitesseCursor.Value;
+
+        }
+
         private void ComboListIndexChanged(object sender, EventArgs e)
         {
             ClearGraph(SpecificGraph);
-            
+
             for (int etat = 0; etat < graphValue[LocationComboList.SelectedIndex].Count; etat++)
             {
                 for (int day = 0; day < graphValue[LocationComboList.SelectedIndex][etat].Count; day++)
@@ -298,12 +309,12 @@ namespace PandemicSimulator
                     if (etat == 0)
                     { //Suceptible
                         SpecificGraph.Series["SUSCEPTIBLE"].Points.AddXY(day, graphValue[LocationComboList.SelectedIndex][etat][day]);
-                        
+
                     }
                     else if (etat == 1)
                     {//INFECTIOUS
                         SpecificGraph.Series["INFECTIOUS"].Points.AddXY(day, graphValue[LocationComboList.SelectedIndex][etat][day]);
-                        
+
                     }
                     else if (etat == 2)
                     {// removed
@@ -313,6 +324,26 @@ namespace PandemicSimulator
             }
             SpecificGraph.Titles.Clear();
             SpecificGraph.Titles.Add(LocationComboList.SelectedItem.ToString());
+
+            // == update des texts
+            placeInfoTxt.Text = LocationComboList.SelectedItem.ToString() + "'s info :";
+
+            foreach(var node in graph.GetNodes())
+            {
+                if(node == (Node)LocationComboList.SelectedItem)
+                {
+                    int susceptible = node.GetSIRCount(Human.SIR.SUSCEPTIBLE);
+                    int infectious = node.GetSIRCount(Human.SIR.INFECTIOUS);
+                    int removed = node.GetSIRCount(Human.SIR.REMOVED);
+
+                    SpecificSusceptibleCases.Text = "Number of susceptible : " + susceptible;
+                    SpecificCasesNbre.Text = "Number of cases : " + infectious;
+                    SpecificRemovedNbre.Text = "Number of removed : " + removed;
+                }
+                
+            }
+            
+
         }
     }
 }

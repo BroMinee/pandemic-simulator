@@ -30,16 +30,16 @@ namespace PandemicSimulator
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend11 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series31 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series32 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series33 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend12 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series34 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series35 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series36 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.mainChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.nbHumanTxt = new System.Windows.Forms.Label();
@@ -60,20 +60,27 @@ namespace PandemicSimulator
             this.label2 = new System.Windows.Forms.Label();
             this.SusceptibleCases = new System.Windows.Forms.Label();
             this.RemovedCases = new System.Windows.Forms.Label();
+            this.speedVitesseCursor = new System.Windows.Forms.TrackBar();
+            this.speedVitesseTxt = new System.Windows.Forms.Label();
+            this.SpecificRemovedNbre = new System.Windows.Forms.Label();
+            this.SpecificSusceptibleCases = new System.Windows.Forms.Label();
+            this.SpecificCasesNbre = new System.Windows.Forms.Label();
+            this.placeInfoTxt = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.mainChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HygieneLevelCursor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SocialDistanceCursor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TravellingRateCursor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpecificGraph)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.speedVitesseCursor)).BeginInit();
             this.SuspendLayout();
             // 
             // mainChart
             // 
-            chartArea11.AxisX.Minimum = 0D;
-            chartArea11.Name = "ChartArea1";
-            this.mainChart.ChartAreas.Add(chartArea11);
-            legend11.Name = "Legend1";
-            this.mainChart.Legends.Add(legend11);
+            chartArea1.AxisX.Minimum = 0D;
+            chartArea1.Name = "ChartArea1";
+            this.mainChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.mainChart.Legends.Add(legend1);
             this.mainChart.Location = new System.Drawing.Point(9, 99);
             this.mainChart.Margin = new System.Windows.Forms.Padding(0);
             this.mainChart.Name = "mainChart";
@@ -82,27 +89,27 @@ namespace PandemicSimulator
         System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(103)))), ((int)(((byte)(83))))),
         System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(97)))), ((int)(((byte)(107))))),
         System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))))};
-            series31.ChartArea = "ChartArea1";
-            series31.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedArea100;
-            series31.Legend = "Legend1";
-            series31.Name = "INFECTIOUS";
-            series31.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
-            series31.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
-            series32.ChartArea = "ChartArea1";
-            series32.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedArea100;
-            series32.Legend = "Legend1";
-            series32.Name = "SUSCEPTIBLE";
-            series32.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
-            series32.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
-            series33.ChartArea = "ChartArea1";
-            series33.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedArea100;
-            series33.Legend = "Legend1";
-            series33.Name = "REMOVED";
-            series33.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
-            series33.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
-            this.mainChart.Series.Add(series31);
-            this.mainChart.Series.Add(series32);
-            this.mainChart.Series.Add(series33);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedArea100;
+            series1.Legend = "Legend1";
+            series1.Name = "INFECTIOUS";
+            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
+            series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedArea100;
+            series2.Legend = "Legend1";
+            series2.Name = "SUSCEPTIBLE";
+            series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
+            series2.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedArea100;
+            series3.Legend = "Legend1";
+            series3.Name = "REMOVED";
+            series3.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
+            series3.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
+            this.mainChart.Series.Add(series1);
+            this.mainChart.Series.Add(series2);
+            this.mainChart.Series.Add(series3);
             this.mainChart.Size = new System.Drawing.Size(1150, 348);
             this.mainChart.TabIndex = 0;
             // 
@@ -239,15 +246,15 @@ namespace PandemicSimulator
             this.LocationComboList.Name = "LocationComboList";
             this.LocationComboList.Size = new System.Drawing.Size(121, 21);
             this.LocationComboList.TabIndex = 19;
-            this.LocationComboList.SelectedIndexChanged += new System.EventHandler(this.ComboListIndexChanged);
+            this.LocationComboList.SelectionChangeCommitted += new System.EventHandler(this.ComboListIndexChanged);
             // 
             // SpecificGraph
             // 
-            chartArea12.AxisX.Minimum = 0D;
-            chartArea12.Name = "ChartArea1";
-            this.SpecificGraph.ChartAreas.Add(chartArea12);
-            legend12.Name = "Legend1";
-            this.SpecificGraph.Legends.Add(legend12);
+            chartArea2.AxisX.Minimum = 0D;
+            chartArea2.Name = "ChartArea1";
+            this.SpecificGraph.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.SpecificGraph.Legends.Add(legend2);
             this.SpecificGraph.Location = new System.Drawing.Point(9, 491);
             this.SpecificGraph.Margin = new System.Windows.Forms.Padding(0);
             this.SpecificGraph.Name = "SpecificGraph";
@@ -256,27 +263,30 @@ namespace PandemicSimulator
         System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(103)))), ((int)(((byte)(83))))),
         System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(97)))), ((int)(((byte)(107))))),
         System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))))};
-            series34.ChartArea = "ChartArea1";
-            series34.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedArea100;
-            series34.Legend = "Legend1";
-            series34.Name = "INFECTIOUS";
-            series34.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
-            series34.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
-            series35.ChartArea = "ChartArea1";
-            series35.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedArea100;
-            series35.Legend = "Legend1";
-            series35.Name = "SUSCEPTIBLE";
-            series35.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
-            series35.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
-            series36.ChartArea = "ChartArea1";
-            series36.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedArea100;
-            series36.Legend = "Legend1";
-            series36.Name = "REMOVED";
-            series36.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
-            series36.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
-            this.SpecificGraph.Series.Add(series34);
-            this.SpecificGraph.Series.Add(series35);
-            this.SpecificGraph.Series.Add(series36);
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedArea100;
+            series4.Legend = "Legend1";
+            series4.Name = "INFECTIOUS";
+            series4.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
+            series4.YValuesPerPoint = 6;
+            series4.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedArea100;
+            series5.Legend = "Legend1";
+            series5.Name = "SUSCEPTIBLE";
+            series5.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
+            series5.YValuesPerPoint = 6;
+            series5.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedArea100;
+            series6.Legend = "Legend1";
+            series6.Name = "REMOVED";
+            series6.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
+            series6.YValuesPerPoint = 6;
+            series6.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
+            this.SpecificGraph.Series.Add(series4);
+            this.SpecificGraph.Series.Add(series5);
+            this.SpecificGraph.Series.Add(series6);
             this.SpecificGraph.Size = new System.Drawing.Size(1150, 348);
             this.SpecificGraph.TabIndex = 20;
             this.SpecificGraph.Text = "chart1";
@@ -319,11 +329,75 @@ namespace PandemicSimulator
             this.RemovedCases.TabIndex = 24;
             this.RemovedCases.Text = "Actual number of removed : ";
             // 
+            // speedVitesseCursor
+            // 
+            this.speedVitesseCursor.LargeChange = 50;
+            this.speedVitesseCursor.Location = new System.Drawing.Point(1171, 502);
+            this.speedVitesseCursor.Maximum = 500;
+            this.speedVitesseCursor.Minimum = 10;
+            this.speedVitesseCursor.Name = "speedVitesseCursor";
+            this.speedVitesseCursor.Size = new System.Drawing.Size(330, 45);
+            this.speedVitesseCursor.SmallChange = 20;
+            this.speedVitesseCursor.TabIndex = 25;
+            this.speedVitesseCursor.Value = 100;
+            this.speedVitesseCursor.Scroll += new System.EventHandler(this.speedVitesseCursor_Scroll);
+            // 
+            // speedVitesseTxt
+            // 
+            this.speedVitesseTxt.AutoSize = true;
+            this.speedVitesseTxt.Location = new System.Drawing.Point(1176, 486);
+            this.speedVitesseTxt.Name = "speedVitesseTxt";
+            this.speedVitesseTxt.Size = new System.Drawing.Size(180, 13);
+            this.speedVitesseTxt.TabIndex = 26;
+            this.speedVitesseTxt.Text = "Time between each update : 100 ms";
+            // 
+            // SpecificRemovedNbre
+            // 
+            this.SpecificRemovedNbre.AutoSize = true;
+            this.SpecificRemovedNbre.Location = new System.Drawing.Point(971, 689);
+            this.SpecificRemovedNbre.Name = "SpecificRemovedNbre";
+            this.SpecificRemovedNbre.Size = new System.Drawing.Size(109, 13);
+            this.SpecificRemovedNbre.TabIndex = 30;
+            this.SpecificRemovedNbre.Text = "Number of removed : ";
+            // 
+            // SpecificSusceptibleCases
+            // 
+            this.SpecificSusceptibleCases.AutoSize = true;
+            this.SpecificSusceptibleCases.Location = new System.Drawing.Point(971, 625);
+            this.SpecificSusceptibleCases.Name = "SpecificSusceptibleCases";
+            this.SpecificSusceptibleCases.Size = new System.Drawing.Size(121, 13);
+            this.SpecificSusceptibleCases.TabIndex = 29;
+            this.SpecificSusceptibleCases.Text = "Number of susceptible : ";
+            // 
+            // SpecificCasesNbre
+            // 
+            this.SpecificCasesNbre.AutoSize = true;
+            this.SpecificCasesNbre.Location = new System.Drawing.Point(971, 657);
+            this.SpecificCasesNbre.Name = "SpecificCasesNbre";
+            this.SpecificCasesNbre.Size = new System.Drawing.Size(96, 13);
+            this.SpecificCasesNbre.TabIndex = 28;
+            this.SpecificCasesNbre.Text = "Number of cases : ";
+            // 
+            // placeInfoTxt
+            // 
+            this.placeInfoTxt.AutoSize = true;
+            this.placeInfoTxt.Location = new System.Drawing.Point(971, 587);
+            this.placeInfoTxt.Name = "placeInfoTxt";
+            this.placeInfoTxt.Size = new System.Drawing.Size(31, 13);
+            this.placeInfoTxt.TabIndex = 31;
+            this.placeInfoTxt.Text = "Info :";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1513, 848);
+            this.Controls.Add(this.placeInfoTxt);
+            this.Controls.Add(this.SpecificRemovedNbre);
+            this.Controls.Add(this.SpecificSusceptibleCases);
+            this.Controls.Add(this.SpecificCasesNbre);
+            this.Controls.Add(this.speedVitesseTxt);
+            this.Controls.Add(this.speedVitesseCursor);
             this.Controls.Add(this.RemovedCases);
             this.Controls.Add(this.SusceptibleCases);
             this.Controls.Add(this.label2);
@@ -350,6 +424,7 @@ namespace PandemicSimulator
             ((System.ComponentModel.ISupportInitialize)(this.SocialDistanceCursor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TravellingRateCursor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpecificGraph)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.speedVitesseCursor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -377,6 +452,12 @@ namespace PandemicSimulator
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label SusceptibleCases;
         private System.Windows.Forms.Label RemovedCases;
+        private System.Windows.Forms.TrackBar speedVitesseCursor;
+        private System.Windows.Forms.Label speedVitesseTxt;
+        private System.Windows.Forms.Label SpecificRemovedNbre;
+        private System.Windows.Forms.Label SpecificCasesNbre;
+        private System.Windows.Forms.Label SpecificSusceptibleCases;
+        private System.Windows.Forms.Label placeInfoTxt;
     }
 }
 

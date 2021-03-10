@@ -16,7 +16,7 @@ namespace PandemicSimulator
         {
             infectious = new List<Human>();
             Human patientZero = location.GetHumans()[Form1.rng.Next(location.GetHumans().Count)];
-            patientZero.SetVirus(new Virus("Covid-19", 0.6, 150, 14));
+            patientZero.SetVirus(new Virus("Covid-19", 0.6, 3, 14));
             patientZero.SetSir(Human.SIR.INFECTIOUS);
             infectious.Add(patientZero);
         } 
@@ -73,21 +73,22 @@ namespace PandemicSimulator
 
             for (int i = 0; i < nbIteraction; i++)
             {
-                if (transmitter.GetVirus().GetTransmissionRate() * 100 > GenerateRandom())
+                if (transmitter.GetVirus().GetTransmissionRate() * 100 > Form1.rng.Next(100))
                 {
-                    if (humanOnSpot[i].GetSir() == Human.SIR.SUSCEPTIBLE && humanOnSpot[i] != transmitter)
+                    int pos = Form1.rng.Next(humanOnSpot.Count);
+                    if (humanOnSpot[pos].GetSir() == Human.SIR.SUSCEPTIBLE && humanOnSpot[pos] != transmitter)
                     {
-                        var moyenneHygiene = (transmitter.GetHygiene() + humanOnSpot[i].GetHygiene()) / 2;
-                        var moyenneDistanceSociale = (transmitter.GetSocialDistance() + humanOnSpot[i].GetSocialDistance()) / 2;
+                        var moyenneHygiene = (transmitter.GetHygiene() + humanOnSpot[pos].GetHygiene()) / 2;
+                        var moyenneDistanceSociale = (transmitter.GetSocialDistance() + humanOnSpot[pos].GetSocialDistance()) / 2;
 
-                        if (moyenneHygiene * 100 < GenerateRandom() && moyenneDistanceSociale * 100 < GenerateRandom())// Possiblement infecte
+                        if (moyenneHygiene * 100 < Form1.rng.Next(100) && moyenneDistanceSociale * 100 < Form1.rng.Next(100))// Possiblement infecte
                         {
-                            humanOnSpot[i].SetVirus(new Virus("Covid-19", 0.6,150, 14)); // On reprend pas les valeurs du transmetteur
-                            humanOnSpot[i].SetSir(Human.SIR.INFECTIOUS);
-                            justGotInfected.Add(humanOnSpot[i]);
+                            humanOnSpot[pos].SetVirus(new Virus("Covid-19", 0.6,3, 14)); // On reprend pas les valeurs du transmetteur
+                            humanOnSpot[pos].SetSir(Human.SIR.INFECTIOUS);
+                            justGotInfected.Add(humanOnSpot[pos]);
                         }
                     }
-                    else if (humanOnSpot[i] == transmitter)
+                    else if (humanOnSpot[pos] == transmitter)
                     {
                         nbIteraction++;
                     }
@@ -136,12 +137,6 @@ namespace PandemicSimulator
             }
 
             return infectious.Count;
-        }
-
-        /// <summary> Generate a int between 0 and 100 (excluded)</summary>
-        private static int GenerateRandom()
-        {
-            return Form1.rng.Next(100);
         }
     }
 }
